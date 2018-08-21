@@ -13,11 +13,11 @@ public class ImageProcess
         // read images with subject, subject background and new background
         try
         {       
-            f = new File("D:\\True Love\\Java\\Image Processing\\img.jpg");
+            f = new File("img.jpg");
             img = ImageIO.read(f);
-            f = new File("D:\\True Love\\Java\\Image Processing\\bkgPrimary.jpg");
+            f = new File("bkgPrimary.jpg");
             imgBkgPrimary = ImageIO.read(f);
-            f = new File("D:\\True Love\\Java\\Image Processing\\bkgSecondary.jpg");
+            f = new File("bkgSecondary.jpg");
             imgBkg = ImageIO.read(f);
         }
         catch(IOException e)
@@ -29,7 +29,7 @@ public class ImageProcess
         int width = img.getWidth();
         int height = img.getHeight();
  
-        // convert to greyscale
+        // change background
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
@@ -59,7 +59,7 @@ public class ImageProcess
         // write image
         try
         {
-            f = new File("D:\\True Love\\Java\\Image Processing\\out.jpg");
+            f = new File("out.jpg");
             ImageIO.write(img, "jpg", f);
         }
         catch(IOException e)
